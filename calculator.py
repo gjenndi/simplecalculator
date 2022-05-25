@@ -49,9 +49,9 @@ class geometry:
         h = int(input("Enter height H: "))
 
         perimeter_of_triangle = (a + b + c)
-        print("Perimeter of a triangle with side A=", a, "centimeters, with side B =", b, "centimeters, with side C =", c, "centimeters is", perimeter_of_triangle, "centimeters.")
+        print("Perimeter of a triangle with side A =", a, "centimeters, with side B =", b, "centimeters, with side C =", c, "centimeters is", perimeter_of_triangle, "centimeters.")
         area_of_triangle = ((b*h)/2)
-        print("Area of a triangle with side B=", b, "centimeters and height", h, "centimeters is", area_of_triangle, "centimeter.")
+        print("Area of a triangle with side B =", b, "centimeters and height", h, "centimeters is", area_of_triangle, "centimeter.")
 
 
     def circle():
@@ -106,58 +106,68 @@ time.sleep(0.3)
 print("If you want pythagorean theorem type theorem, and if you want other calculations type other")
 time.sleep(0.3)
 
-answer = input("Enter what do you want to know: ").upper()
 
+def Answer():
+    answer = input("Enter what do you want to know: ").upper()
 
-if answer == "BASICS" :
-    operation = (input("Which operation do you need: ").upper())
-    
-    if operation == "ADDING":
-        basics.adding()
-    
-    if operation == "SUBTRACTION":
-        basics.subtraction()
+    if answer == "BASICS" :
+        operation = (input("Which operation do you need: ").upper())
+        
+        if operation == "ADDING":
+            basics.adding()
+        
+        if operation == "SUBTRACTION":
+            basics.subtraction()
 
-    if operation == "MULTIPLICATION":
-        basics.multiplication()
+        if operation == "MULTIPLICATION":
+            basics.multiplication()
 
-    if operation == "DIVISION":
-        basics.division()
+        if operation == "DIVISION":
+            basics.division()
 
-if answer == "GEOMETRY":
-    figure = (input("Which figure do you need to calculate area and syprine: ").upper())
+    if answer == "GEOMETRY":
+        figure = (input("Which figure do you need to calculate perimeter and area: ").upper())
 
-    if figure == "SQUARE":
-        geometry.square()
-    
-    if figure == "TRIANGLE":
-        geometry.triangle()
+        if figure == "SQUARE":
+            geometry.square()
+        
+        if figure == "TRIANGLE":
+            geometry.triangle()
 
-    if figure == "CIRCLE":
-        geometry.circle()
+        if figure == "CIRCLE":
+            geometry.circle()
 
-if answer == "THEOREM":
-    pythgr = (input("Do you want to know hypotenuse or side: ").upper())
+    if answer == "THEOREM":
+        pythgr = (input("Do you want to know hypotenuse or side: ").upper())
 
-    if pythgr == "HYPOTENUSE":
-        theorem.pythagoras_hypotenuse()
-    
-    if pythgr == "SIDE":
-        theorem.pythagoras_side()
+        if pythgr == "HYPOTENUSE":
+            theorem.pythagoras_hypotenuse()
+        
+        if pythgr == "SIDE":
+            theorem.pythagoras_side()
 
-if answer == "OTHER":
+    if answer == "OTHER":
 
-    print("Here we offer you root, power and factors")
-    other = (input("Which one do you choose: ").upper())
+        print("Here we offer you root, power and factors")
+        other = (input("Which one do you choose: ").upper())
 
-    if other == "ROOT":
-        others.root()
-    
-    if other == "POWER":
-        others.power()
+        if other == "ROOT":
+            others.root()
+        
+        if other == "POWER":
+            others.power()
 
-    if other == "FACTORS":
-        others.factors()
+        if other == "FACTORS":
+            others.factors()
      
-else:
-    print("Sorry, you wrote that wrong!!")
+Answer()
+
+anw = input("Do you need something else: ").upper()
+
+while True:
+    if anw == "YES":
+        Answer()
+
+    else:
+        print("DONE!!")
+        break
